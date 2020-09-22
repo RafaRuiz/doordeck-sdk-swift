@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3CBED8B6BDA24458685AF204 /* Pods_doordeck_sdk_swift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7661777C43BE58BFEEC6A8C5 /* Pods_doordeck_sdk_swift_sample.framework */; };
 		59029C0A2268B636009FAE5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59029C092268B636009FAE5C /* AppDelegate.swift */; };
 		59029C0C2268B636009FAE5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59029C0B2268B636009FAE5C /* ViewController.swift */; };
 		59029C0F2268B636009FAE5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59029C0D2268B636009FAE5C /* Main.storyboard */; };
@@ -31,6 +30,12 @@
 		595B1FFB227C519100D7297E /* JsonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595B1FEC227C519000D7297E /* JsonHelper.swift */; };
 		595B1FFD227C7CFF00D7297E /* SDKEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595B1FFC227C7CFF00D7297E /* SDKEvent.swift */; };
 		595D11A322CD4ACA007D75DB /* DoordeckSDKUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595D11A222CD4ACA007D75DB /* DoordeckSDKUI.swift */; };
+		5981C11C251A08AA00DF431F /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 5981C11B251A08AA00DF431F /* Cache */; };
+		5981C124251A08D300DF431F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5981C123251A08D300DF431F /* Alamofire */; };
+		5981C128251A08E200DF431F /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 5981C127251A08E200DF431F /* Reachability */; };
+		5981C12C251A08F100DF431F /* QRCodeReader in Frameworks */ = {isa = PBXBuildFile; productRef = 5981C12B251A08F100DF431F /* QRCodeReader */; };
+		5981C133251A097C00DF431F /* Clibsodium in Frameworks */ = {isa = PBXBuildFile; productRef = 5981C132251A097C00DF431F /* Clibsodium */; };
+		5981C135251A097C00DF431F /* Sodium in Frameworks */ = {isa = PBXBuildFile; productRef = 5981C134251A097C00DF431F /* Sodium */; };
 		5984AE6A228EB405008066D2 /* QCMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AE68228EB405008066D2 /* QCMethod.swift */; };
 		5984AE6B228EB405008066D2 /* unlockAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AE69228EB405008066D2 /* unlockAnimations.swift */; };
 		5984AE6C228EB556008066D2 /* AppStringsSDKExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909D09422858A9200D31E81 /* AppStringsSDKExtension.swift */; };
@@ -71,7 +76,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		24D9425644544BD402388FEA /* Pods-doordeck-sdk-swift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doordeck-sdk-swift-sample.release.xcconfig"; path = "Target Support Files/Pods-doordeck-sdk-swift-sample/Pods-doordeck-sdk-swift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		59029C062268B636009FAE5C /* doordeck-sdk-swift-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "doordeck-sdk-swift-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59029C092268B636009FAE5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59029C0B2268B636009FAE5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,8 +140,6 @@
 		59FE8F20233121DA008F7AB8 /* AmazonRootCA2.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = AmazonRootCA2.cer; sourceTree = "<group>"; };
 		59FE8F21233121DA008F7AB8 /* AmazonRootCA4.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = AmazonRootCA4.cer; sourceTree = "<group>"; };
 		59FE8F22233121DA008F7AB8 /* SFSRootCAG2.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFSRootCAG2.cer; sourceTree = "<group>"; };
-		7661777C43BE58BFEEC6A8C5 /* Pods_doordeck_sdk_swift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_doordeck_sdk_swift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8BFF401225D210C4F0CB45E /* Pods-doordeck-sdk-swift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doordeck-sdk-swift-sample.debug.xcconfig"; path = "Target Support Files/Pods-doordeck-sdk-swift-sample/Pods-doordeck-sdk-swift-sample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,37 +147,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CBED8B6BDA24458685AF204 /* Pods_doordeck_sdk_swift_sample.framework in Frameworks */,
+				5981C124251A08D300DF431F /* Alamofire in Frameworks */,
+				5981C128251A08E200DF431F /* Reachability in Frameworks */,
+				5981C133251A097C00DF431F /* Clibsodium in Frameworks */,
+				5981C11C251A08AA00DF431F /* Cache in Frameworks */,
+				5981C12C251A08F100DF431F /* QRCodeReader in Frameworks */,
+				5981C135251A097C00DF431F /* Sodium in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		26B61AE5B2D741B4A046FDCB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7661777C43BE58BFEEC6A8C5 /* Pods_doordeck_sdk_swift_sample.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		472D2AB838BF751F3D282AEB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B8BFF401225D210C4F0CB45E /* Pods-doordeck-sdk-swift-sample.debug.xcconfig */,
-				24D9425644544BD402388FEA /* Pods-doordeck-sdk-swift-sample.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		59029BFD2268B636009FAE5C = {
 			isa = PBXGroup;
 			children = (
 				59029C082268B636009FAE5C /* doordeck-sdk-swift-sample */,
 				59029C072268B636009FAE5C /* Products */,
-				472D2AB838BF751F3D282AEB /* Pods */,
-				26B61AE5B2D741B4A046FDCB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -361,17 +349,23 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59029C182268B638009FAE5C /* Build configuration list for PBXNativeTarget "doordeck-sdk-swift-sample" */;
 			buildPhases = (
-				A7C97BEE09232325BA4C7E90 /* [CP] Check Pods Manifest.lock */,
 				59029C022268B636009FAE5C /* Sources */,
 				59029C032268B636009FAE5C /* Frameworks */,
 				59029C042268B636009FAE5C /* Resources */,
-				73DE41AA947E02B14838BA50 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "doordeck-sdk-swift-sample";
+			packageProductDependencies = (
+				5981C11B251A08AA00DF431F /* Cache */,
+				5981C123251A08D300DF431F /* Alamofire */,
+				5981C127251A08E200DF431F /* Reachability */,
+				5981C12B251A08F100DF431F /* QRCodeReader */,
+				5981C132251A097C00DF431F /* Clibsodium */,
+				5981C134251A097C00DF431F /* Sodium */,
+			);
 			productName = "doordeck-sdk-swift-sample";
 			productReference = 59029C062268B636009FAE5C /* doordeck-sdk-swift-sample.app */;
 			productType = "com.apple.product-type.application";
@@ -383,7 +377,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = Doordeck;
 				TargetAttributes = {
 					59029C052268B636009FAE5C = {
@@ -405,6 +399,13 @@
 				Base,
 			);
 			mainGroup = 59029BFD2268B636009FAE5C;
+			packageReferences = (
+				5981C11A251A08AA00DF431F /* XCRemoteSwiftPackageReference "Cache" */,
+				5981C122251A08D300DF431F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5981C126251A08E200DF431F /* XCRemoteSwiftPackageReference "Reachability" */,
+				5981C12A251A08F100DF431F /* XCRemoteSwiftPackageReference "QRCodeReader" */,
+				5981C131251A097C00DF431F /* XCRemoteSwiftPackageReference "swift-sodium" */,
+			);
 			productRefGroup = 59029C072268B636009FAE5C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -435,48 +436,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		73DE41AA947E02B14838BA50 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-doordeck-sdk-swift-sample/Pods-doordeck-sdk-swift-sample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-doordeck-sdk-swift-sample/Pods-doordeck-sdk-swift-sample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-doordeck-sdk-swift-sample/Pods-doordeck-sdk-swift-sample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A7C97BEE09232325BA4C7E90 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-doordeck-sdk-swift-sample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		59029C022268B636009FAE5C /* Sources */ = {
@@ -598,6 +557,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -659,6 +619,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -690,14 +651,13 @@
 		};
 		59029C192268B638009FAE5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8BFF401225D210C4F0CB45E /* Pods-doordeck-sdk-swift-sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "doordeck-sdk-swift-sample/doordeck-sdk-swift-sample.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "doordeck-sdk-swift-sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -711,14 +671,13 @@
 		};
 		59029C1A2268B638009FAE5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24D9425644544BD402388FEA /* Pods-doordeck-sdk-swift-sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "doordeck-sdk-swift-sample/doordeck-sdk-swift-sample.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "doordeck-sdk-swift-sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -752,6 +711,82 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5981C11A251A08AA00DF431F /* XCRemoteSwiftPackageReference "Cache" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hyperoslo/Cache";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
+		5981C122251A08D300DF431F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+		5981C126251A08E200DF431F /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		5981C12A251A08F100DF431F /* XCRemoteSwiftPackageReference "QRCodeReader" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yannickl/QRCodeReader.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.1.1;
+			};
+		};
+		5981C131251A097C00DF431F /* XCRemoteSwiftPackageReference "swift-sodium" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jedisct1/swift-sodium";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5981C11B251A08AA00DF431F /* Cache */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5981C11A251A08AA00DF431F /* XCRemoteSwiftPackageReference "Cache" */;
+			productName = Cache;
+		};
+		5981C123251A08D300DF431F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5981C122251A08D300DF431F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		5981C127251A08E200DF431F /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5981C126251A08E200DF431F /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
+		5981C12B251A08F100DF431F /* QRCodeReader */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5981C12A251A08F100DF431F /* XCRemoteSwiftPackageReference "QRCodeReader" */;
+			productName = QRCodeReader;
+		};
+		5981C132251A097C00DF431F /* Clibsodium */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5981C131251A097C00DF431F /* XCRemoteSwiftPackageReference "swift-sodium" */;
+			productName = Clibsodium;
+		};
+		5981C134251A097C00DF431F /* Sodium */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5981C131251A097C00DF431F /* XCRemoteSwiftPackageReference "swift-sodium" */;
+			productName = Sodium;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 59029BFE2268B636009FAE5C /* Project object */;
 }
