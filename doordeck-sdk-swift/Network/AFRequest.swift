@@ -6,6 +6,8 @@
 //
 
 import Alamofire
+import Cache
+import Foundation
 
 /**
  * Simple wrapper around Alamofire
@@ -60,7 +62,7 @@ class AFRequest {
     
     func handleJsonResponse(_ url: String,
                             response: HTTPURLResponse?,
-                            result: Result<Any, AFError>,
+                            result: Swift.Result<Any, AFError>,
                             onSuccess: @escaping (_ jsonData: AnyObject) -> Void,
                             onError: ((_ error: APIClient.error) -> Void)?) {
         
@@ -108,7 +110,7 @@ class AFRequest {
     
     func handleResponse(_ url: String,
                         response: HTTPURLResponse?,
-                        result: Result<String, AFError>,
+                        result: Swift.Result<String, AFError>,
                         onSuccess: @escaping (_ jsonData: AnyObject) -> Void,
                         onError: ((_ error: APIClient.error) -> Void)?) {
         

@@ -34,8 +34,6 @@
 		5981C124251A08D300DF431F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5981C123251A08D300DF431F /* Alamofire */; };
 		5981C128251A08E200DF431F /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 5981C127251A08E200DF431F /* Reachability */; };
 		5981C12C251A08F100DF431F /* QRCodeReader in Frameworks */ = {isa = PBXBuildFile; productRef = 5981C12B251A08F100DF431F /* QRCodeReader */; };
-		5981C133251A097C00DF431F /* Clibsodium in Frameworks */ = {isa = PBXBuildFile; productRef = 5981C132251A097C00DF431F /* Clibsodium */; };
-		5981C135251A097C00DF431F /* Sodium in Frameworks */ = {isa = PBXBuildFile; productRef = 5981C134251A097C00DF431F /* Sodium */; };
 		5984AE6A228EB405008066D2 /* QCMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AE68228EB405008066D2 /* QCMethod.swift */; };
 		5984AE6B228EB405008066D2 /* unlockAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5984AE69228EB405008066D2 /* unlockAnimations.swift */; };
 		5984AE6C228EB556008066D2 /* AppStringsSDKExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909D09422858A9200D31E81 /* AppStringsSDKExtension.swift */; };
@@ -68,6 +66,8 @@
 		59ABB7CF2271C3E30048BCF5 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ABB7A52271C3E30048BCF5 /* VerificationViewController.swift */; };
 		59ABB7D02271C3E30048BCF5 /* VerificationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59ABB7A62271C3E30048BCF5 /* VerificationStoryboard.storyboard */; };
 		59ABB7D322733E550048BCF5 /* CertificateChainClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ABB7D222733E550048BCF5 /* CertificateChainClass.swift */; };
+		59C563A3251A0BAB00C59255 /* Sodium in Frameworks */ = {isa = PBXBuildFile; productRef = 59C563A2251A0BAB00C59255 /* Sodium */; };
+		59C563A5251A0BAB00C59255 /* Clibsodium in Frameworks */ = {isa = PBXBuildFile; productRef = 59C563A4251A0BAB00C59255 /* Clibsodium */; };
 		59FCBE48226F49A400D7BFA5 /* DoNotCommit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FCBE47226F49A400D7BFA5 /* DoNotCommit.swift */; };
 		59FE8F23233121DA008F7AB8 /* AmazonRootCA3.cer in Resources */ = {isa = PBXBuildFile; fileRef = 59FE8F1F233121D9008F7AB8 /* AmazonRootCA3.cer */; };
 		59FE8F24233121DA008F7AB8 /* AmazonRootCA2.cer in Resources */ = {isa = PBXBuildFile; fileRef = 59FE8F20233121DA008F7AB8 /* AmazonRootCA2.cer */; };
@@ -76,7 +76,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		59029C062268B636009FAE5C /* doordeck-sdk-swift-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "doordeck-sdk-swift-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59029C092268B636009FAE5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59029C0B2268B636009FAE5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		59029C0E2268B636009FAE5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +134,8 @@
 		59ABB7A72271C3E30048BCF5 /* doordeck_sdk_swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doordeck_sdk_swift.h; sourceTree = "<group>"; };
 		59ABB7D12271F3770048BCF5 /* doordeck-sdk-swift-sample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "doordeck-sdk-swift-sample.entitlements"; sourceTree = "<group>"; };
 		59ABB7D222733E550048BCF5 /* CertificateChainClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateChainClass.swift; sourceTree = "<group>"; };
+		59C563B0251A0E1A00C59255 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		59C563B3251A0E2700C59255 /* doordeck-sdk-swift-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "doordeck-sdk-swift-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59FCBE47226F49A400D7BFA5 /* DoNotCommit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoNotCommit.swift; sourceTree = "<group>"; };
 		59FE8F1F233121D9008F7AB8 /* AmazonRootCA3.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = AmazonRootCA3.cer; sourceTree = "<group>"; };
 		59FE8F20233121DA008F7AB8 /* AmazonRootCA2.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = AmazonRootCA2.cer; sourceTree = "<group>"; };
@@ -147,12 +148,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59C563A3251A0BAB00C59255 /* Sodium in Frameworks */,
 				5981C124251A08D300DF431F /* Alamofire in Frameworks */,
 				5981C128251A08E200DF431F /* Reachability in Frameworks */,
-				5981C133251A097C00DF431F /* Clibsodium in Frameworks */,
 				5981C11C251A08AA00DF431F /* Cache in Frameworks */,
 				5981C12C251A08F100DF431F /* QRCodeReader in Frameworks */,
-				5981C135251A097C00DF431F /* Sodium in Frameworks */,
+				59C563A5251A0BAB00C59255 /* Clibsodium in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,16 +164,9 @@
 			isa = PBXGroup;
 			children = (
 				59029C082268B636009FAE5C /* doordeck-sdk-swift-sample */,
-				59029C072268B636009FAE5C /* Products */,
+				59C563AF251A0E1A00C59255 /* Frameworks */,
+				59C563B3251A0E2700C59255 /* doordeck-sdk-swift-sample.app */,
 			);
-			sourceTree = "<group>";
-		};
-		59029C072268B636009FAE5C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				59029C062268B636009FAE5C /* doordeck-sdk-swift-sample.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		59029C082268B636009FAE5C /* doordeck-sdk-swift-sample */ = {
@@ -342,6 +336,14 @@
 			path = "Verification Screen";
 			sourceTree = "<group>";
 		};
+		59C563AF251A0E1A00C59255 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59C563B0251A0E1A00C59255 /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -363,11 +365,11 @@
 				5981C123251A08D300DF431F /* Alamofire */,
 				5981C127251A08E200DF431F /* Reachability */,
 				5981C12B251A08F100DF431F /* QRCodeReader */,
-				5981C132251A097C00DF431F /* Clibsodium */,
-				5981C134251A097C00DF431F /* Sodium */,
+				59C563A2251A0BAB00C59255 /* Sodium */,
+				59C563A4251A0BAB00C59255 /* Clibsodium */,
 			);
 			productName = "doordeck-sdk-swift-sample";
-			productReference = 59029C062268B636009FAE5C /* doordeck-sdk-swift-sample.app */;
+			productReference = 59C563B3251A0E2700C59255 /* doordeck-sdk-swift-sample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -404,9 +406,9 @@
 				5981C122251A08D300DF431F /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5981C126251A08E200DF431F /* XCRemoteSwiftPackageReference "Reachability" */,
 				5981C12A251A08F100DF431F /* XCRemoteSwiftPackageReference "QRCodeReader" */,
-				5981C131251A097C00DF431F /* XCRemoteSwiftPackageReference "swift-sodium" */,
+				59C563A1251A0BAB00C59255 /* XCRemoteSwiftPackageReference "swift-sodium" */,
 			);
-			productRefGroup = 59029C072268B636009FAE5C /* Products */;
+			productRefGroup = 59029BFD2268B636009FAE5C;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -745,7 +747,7 @@
 				minimumVersion = 10.1.1;
 			};
 		};
-		5981C131251A097C00DF431F /* XCRemoteSwiftPackageReference "swift-sodium" */ = {
+		59C563A1251A0BAB00C59255 /* XCRemoteSwiftPackageReference "swift-sodium" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jedisct1/swift-sodium";
 			requirement = {
@@ -776,15 +778,15 @@
 			package = 5981C12A251A08F100DF431F /* XCRemoteSwiftPackageReference "QRCodeReader" */;
 			productName = QRCodeReader;
 		};
-		5981C132251A097C00DF431F /* Clibsodium */ = {
+		59C563A2251A0BAB00C59255 /* Sodium */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5981C131251A097C00DF431F /* XCRemoteSwiftPackageReference "swift-sodium" */;
-			productName = Clibsodium;
-		};
-		5981C134251A097C00DF431F /* Sodium */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5981C131251A097C00DF431F /* XCRemoteSwiftPackageReference "swift-sodium" */;
+			package = 59C563A1251A0BAB00C59255 /* XCRemoteSwiftPackageReference "swift-sodium" */;
 			productName = Sodium;
+		};
+		59C563A4251A0BAB00C59255 /* Clibsodium */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59C563A1251A0BAB00C59255 /* XCRemoteSwiftPackageReference "swift-sodium" */;
+			productName = Clibsodium;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
