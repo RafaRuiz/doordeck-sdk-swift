@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 /**
  Backgrounds colour for Light (Light Grey) and Dark (primary dark blue)
@@ -107,7 +106,9 @@ public class Doordeck {
                                    token: token)
         
         self.sodium = SodiumHelper(token)
+        #if os(iOS)
         self.uiDelegate = DoordeckSDKUI()
+        #endif
         self.doordeckControl = DoordeckControl(showCloseButton: closeButton)
         darkModeActive(darkMode)
     }

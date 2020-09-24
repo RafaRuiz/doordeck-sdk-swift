@@ -6,7 +6,9 @@
 //
 
 import UIKit
+#if canImport(CoreNFC)
 import CoreNFC
+
 
 protocol quickEntryDelegate {
     func lockDetected(_ UUID: String)
@@ -179,3 +181,5 @@ extension NFCNDEFPayload {
     }
 }
 
+
+#endif

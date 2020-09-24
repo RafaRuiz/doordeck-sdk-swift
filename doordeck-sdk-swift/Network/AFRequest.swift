@@ -6,7 +6,9 @@
 //
 
 import Alamofire
+#if os(iOS)
 import Cache
+#endif
 import Foundation
 
 /**
@@ -34,12 +36,18 @@ class AFRequest {
         
         let memoryCapacity = 100 * 1024 * 1024
         let diskCapacity = 100 * 1024 * 1024
+        
+        #if os(iOS)
         let cache = URLCache(memoryCapacity: memoryCapacity, diskCapacity: diskCapacity, diskPath: nil)
+        #endif
         
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = defaultHeaders.dictionary
         configuration.requestCachePolicy = .useProtocolCachePolicy
+        
+        #if os(iOS)
         configuration.urlCache = cache
+        #endif
         
         let redirector = Redirector(behavior: .modify { task, request, response in
             var redirectedRequest = request
@@ -55,7 +63,7 @@ class AFRequest {
             }
             
             return redirectedRequest
-            })
+        })
         
         sessionManager = Alamofire.Session(configuration: configuration, serverTrustManager: ServerTrustManager(evaluators: serverTrustPolicy()), redirectHandler: redirector)
     }
@@ -69,7 +77,7 @@ class AFRequest {
         
         if let statusCode = response?.statusCode {
             switch(statusCode) {
-                
+            
             case 200, 201, 202, 203, 204:
                 
                 switch result {
@@ -117,7 +125,7 @@ class AFRequest {
         
         if let statusCode = response?.statusCode {
             switch(statusCode) {
-                
+            
             case 200, 201, 202, 203, 204:
                 
                 switch result {
@@ -216,7 +224,7 @@ class AFRequest {
                                                 result: response.result,
                                                 onSuccess: onSuccess,
                                                 onError: onError)
-                }
+                    }
                 
             } else {
                 sessionManager.request(url,
@@ -225,13 +233,13 @@ class AFRequest {
                                        encoding: encoding,
                                        headers: headersTemp)
                     .responseString(completionHandler:
-                        { (response) in
-                            self.handleResponse(url,
-                                                response: response.response,
-                                                result: response.result,
-                                                onSuccess: onSuccess,
-                                                onError: onError)
-                    })
+                                        { (response) in
+                                            self.handleResponse(url,
+                                                                response: response.response,
+                                                                result: response.result,
+                                                                onSuccess: onSuccess,
+                                                                onError: onError)
+                                        })
                 
             }
         } else {
