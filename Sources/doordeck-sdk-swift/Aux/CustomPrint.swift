@@ -82,7 +82,7 @@ func print(_ channel: PrintChannel, object: Any) {
             
         case .lock:
             channelPre = "😎 Lock"
-            printOut = false
+            printOut = true
             
         case .sites:
             channelPre = "✅✅ site"
