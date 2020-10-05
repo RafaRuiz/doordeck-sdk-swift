@@ -60,6 +60,7 @@ class LockDevice {
     var colour: UIColor = UIColor.doorBlue()
     var tiles: [String] = []
     var hidden = false
+    var delayUntilUnlock = 0
     
     var currentlyLocked: Bool = true
     var expireTime: Data? = nil
@@ -110,6 +111,12 @@ class LockDevice {
             if let locations: [String:AnyObject] = usageRequirements["location"] as? [String:AnyObject] {
                 self.locationServices = createLocationService(locations)
                 locationData = locations
+            }
+        }
+        
+        if let delay = settingsTemp["delay"] {
+            if delay is Int {
+                self.delayUntilUnlock = delay as! Int
             }
         }
         
@@ -164,6 +171,7 @@ class LockDevice {
                                                  "name": nameTemp as AnyObject,
                                                  "connected": connectedTemp as AnyObject,
                                                  "unlockTime": unlockTimeTemp as AnyObject,
+                                                 "delayUnlock": delayUntilUnlock as AnyObject,
                                                  "colour": colourString as AnyObject,
                                                  "startDate": sanatizedStartDate as AnyObject,
                                                  "endtDate": sanatizedEndDate as AnyObject,
