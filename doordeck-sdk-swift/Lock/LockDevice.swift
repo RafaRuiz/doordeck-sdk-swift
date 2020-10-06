@@ -33,6 +33,7 @@ class LockDevice {
         case lockOffline
         case lockUnlocked
         case unlockSuccess
+        case delayUnlock
         case unlockFail
         case gpsFailed
         case gpssuccess
@@ -60,7 +61,7 @@ class LockDevice {
     var colour: UIColor = UIColor.doorBlue()
     var tiles: [String] = []
     var hidden = false
-    var delayUntilUnlock = 0
+    var delayUntilUnlock = Double(0.0)
     
     var currentlyLocked: Bool = true
     var expireTime: Data? = nil
@@ -116,7 +117,7 @@ class LockDevice {
         
         if let delay = settingsTemp["delay"] {
             if delay is Int {
-                self.delayUntilUnlock = delay as! Int
+                self.delayUntilUnlock = delay as! Double
             }
         }
         
@@ -309,19 +310,25 @@ class LockDevice {
                                           sodium: sodium,
                                           chain: certificatechain,
                                           control: .unlock,
-                                          completion: { (json, error) in
+                                          completion: { [weak self] (json, error) in
                                             
                     if (error != nil) {
                         SDKEvent().event(.UNLOCK_FAILED)
-                        self.currentlyLocked = true
-                        self.deviceStatusUpdate(.unlockFail)
-                        self.deviceCompletion(nil, error: .unsuccessfull)
+                        self?.currentlyLocked = true
+                        self?.deviceStatusUpdate(.unlockFail)
+                        self?.deviceCompletion(nil, error: .unsuccessfull)
 //                        self.deviceReset() // this was removed to not reset the fail screen to fast
                     } else {
-                        SDKEvent().event(.UNLOCK_SUCCESS)
-                        self.deviceStatusUpdate(.unlockSuccess)
-                        let expiryTime = Date().timeIntervalSince1970 + Double(self.unlockTime)
-                        self.timeKeeper(expiryTime)
+                        if self?.delayUntilUnlock ?? 0 > 0 {
+                            if let delay = self?.delayUntilUnlock ?? 0 {
+                                self?.deviceStatusUpdate(.delayUnlock)
+                                Timer.after(TimeInterval(delay).seconds)  {
+                                    self?.unlockSucess()
+                                }
+                            }
+                        } else {
+                            self?.unlockSucess()
+                        }
                     }
                 })
             } else {
@@ -335,6 +342,13 @@ class LockDevice {
 //            self.deviceReset() // this was removed to not reset the fail screen to fast
             self.deviceCompletion(nil, error: deviceError)
         }
+    }
+    
+    fileprivate func unlockSucess() {
+        SDKEvent().event(.UNLOCK_SUCCESS)
+        self.deviceStatusUpdate(.unlockSuccess)
+        let expiryTime = Date().timeIntervalSince1970 + Double(self.unlockTime)
+        self.timeKeeper(expiryTime)
     }
     
     fileprivate func timeKeeper(_ expiryTime: Double) {

@@ -86,6 +86,10 @@ class LockUnlockViewController: UIViewController {
                 self?.lockSuceesfullyUnlocked(lockDestils.lock)
             }
             
+            if update == .delayUnlock {
+                self?.showWaitScreen(lockDestils.lock.delayUntilUnlock)
+            }
+            
             if update == .unlockFail {
                 self?.showFailedScreen()
             }
@@ -165,6 +169,10 @@ class LockUnlockViewController: UIViewController {
 
 
 extension LockUnlockViewController {
+    private func showWaitScreen (_ delay: Double) {
+        loadingView.addDelayTimer(delay - 1)
+    }
+    
     private func showLoadingScreen () {
         loadingView.addLoadingAnimation()
     }

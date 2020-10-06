@@ -266,6 +266,21 @@ extension NSAttributedString {
         return NSAttributedString (string: string, attributes: attrs)
     }
     
+
+    /// - Parameters:
+    ///   - string: string
+    ///   - colour: text colour
+    ///   - pointSize: dynamic pointsize
+    /// - Returns: NSAttributedString
+    class func doorGinormousTitle (_ string: String, colour: UIColor, pointSize: CGFloat) -> NSAttributedString  {
+        
+        let attrs = createAttributeWithSystemFont(UIFont.systemFont(ofSize: pointSize, weight: UIFont.Weight.bold),
+                                                  colour: colour,
+                                                  kerning: 0)
+        
+        return NSAttributedString (string: string, attributes: attrs)
+    }
+    
 }
 
 

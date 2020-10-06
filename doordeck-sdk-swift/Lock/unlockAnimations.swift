@@ -240,6 +240,77 @@ class unlockAnimation: UIView, CAAnimationDelegate {
     
     //MARK: - Animation Setup
     
+    func addDelayTimer(_ delay: Double, completionBlock: ((_ finished: Bool) -> Void)? = nil){
+        if completionBlock != nil{
+            let completionAnim = CABasicAnimation(keyPath:"completionAnim")
+            completionAnim.duration = 15
+            completionAnim.delegate = self
+            completionAnim.setValue("loading", forKey:"animId")
+            completionAnim.setValue(false, forKey:"needEndAnim")
+            layer.add(completionAnim, forKey:"loading")
+            if let anim = layer.animation(forKey: "loading"){
+                completionBlocks[anim] = completionBlock
+            }
+        }
+        
+        if let loadingcircle = layers["loadingcircle"] as? CAShapeLayer {
+            var delayTimer = delay
+            let delayTimerLabel = UILabel()
+            delayTimerLabel.frame = CGRect(x: loadingcircle.frame.origin.x + 30,
+                                           y: loadingcircle.frame.origin.y + 30,
+                                           width: loadingcircle.frame.width - 60,
+                                           height: loadingcircle.frame.height - 60)
+            
+            delayTimerLabel.layer.backgroundColor = UIColor.white.cgColor
+            delayTimerLabel.textAlignment = .center
+            delayTimerLabel.layer.cornerRadius = 10
+            let pointSize = delayTimerLabel.frame.height
+            if pointSize < 10 {
+                delayTimerLabel.attributedText = NSAttributedString.doorHugeTitle("\(Int(delayTimer))", colour: .doorBlue())
+            } else {
+                delayTimerLabel.attributedText = NSAttributedString.doorGinormousTitle("\(Int(delayTimer))", colour: .doorBlue(), pointSize: pointSize)
+            }
+            self.addSubview(delayTimerLabel)
+            Timer.every(1.second) { (dtimer) in
+                print(.debug, object: delayTimer)
+                if delayTimer < 1 {
+                    dtimer.invalidate()
+                    delayTimerLabel.removeFromSuperview()
+                } else {
+                    if pointSize < 10 {
+                        delayTimerLabel.attributedText = NSAttributedString.doorHugeTitle("\(Int(delayTimer))", colour: .doorBlue())
+                    } else {
+                        delayTimerLabel.attributedText = NSAttributedString.doorGinormousTitle("\(Int(delayTimer))", colour: .doorBlue(), pointSize: pointSize)
+                    }
+                    delayTimer = delayTimer - 1
+                }
+            }
+        }
+        
+        let fillMode : String = CAMediaTimingFillMode.forwards.rawValue
+        
+        let loadingcircle = layers["loadingcircle"] as! CAShapeLayer
+        
+        ////Loadingcircle animation
+        let loadingcircleTransformAnim      = CAKeyframeAnimation(keyPath:"transform.rotation.z")
+        loadingcircleTransformAnim.values   = [0,
+                                               9000 * CGFloat.pi/180]
+        loadingcircleTransformAnim.keyTimes = [0, 1]
+        loadingcircleTransformAnim.duration = 15
+        
+        let loadingcircleLoadingAnim : CAAnimationGroup = QCMethod.group(animations: [loadingcircleTransformAnim], fillMode:fillMode)
+        loadingcircle.add(loadingcircleLoadingAnim, forKey:"loadingcircleLoadingAnim")
+        
+        ////Tick animation
+        let tickOpacityAnim      = CAKeyframeAnimation(keyPath:"opacity")
+        tickOpacityAnim.values   = [0, 0]
+        tickOpacityAnim.keyTimes = [0, 1]
+        tickOpacityAnim.duration = 15
+        
+        let tickLoadingAnim : CAAnimationGroup = QCMethod.group(animations: [tickOpacityAnim], fillMode:fillMode)
+        layers["tick"]?.add(tickLoadingAnim, forKey:"tickLoadingAnim")
+    }
+    
     func addLoadingAnimation(completionBlock: ((_ finished: Bool) -> Void)? = nil){
         if completionBlock != nil{
             let completionAnim = CABasicAnimation(keyPath:"completionAnim")

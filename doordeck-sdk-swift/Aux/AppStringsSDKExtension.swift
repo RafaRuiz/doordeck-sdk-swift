@@ -26,6 +26,8 @@ extension AppStrings {
             return AppStrings.lockUnlocked
         case .unlockSuccess:
             return AppStrings.unlockSuccess
+        case .delayUnlock:
+            return AppStrings.delayUnlock
         case .unlockFail:
             return AppStrings.unlockFail
         case .gpsFailed:

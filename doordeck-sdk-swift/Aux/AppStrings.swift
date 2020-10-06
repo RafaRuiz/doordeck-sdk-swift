@@ -35,6 +35,7 @@ struct AppStrings {
     static let lockOffline: String = NSLocalizedString("Lock offline", comment: "")
     static let lockUnlocked: String = NSLocalizedString("Lock ulocked", comment: "")
     static let unlockSuccess: String = NSLocalizedString("Unlock success", comment: "")
+    static let delayUnlock: String = pleaseWait
     static let unlockFail: String = NSLocalizedString("Unlock failed", comment: "")
     static let gpsFailed: String = NSLocalizedString("GPS failed", comment: "")
     static let gpssuccess: String = NSLocalizedString("GPS success", comment: "")
