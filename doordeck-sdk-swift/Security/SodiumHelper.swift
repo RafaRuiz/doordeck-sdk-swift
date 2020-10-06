@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Sodium
 
 class SodiumHelper {
     fileprivate let sodium = Sodium()
