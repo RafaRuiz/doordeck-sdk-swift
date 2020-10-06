@@ -253,31 +253,38 @@ class unlockAnimation: UIView, CAAnimationDelegate {
             }
         }
         
-        if let loadingcircle = layers["loadingcircle"] as? CAShapeLayer {
+        if let loadingcircle = layers["loadingcircle"] as? CAShapeLayer, let lockView = layers["lock"] as? CAShapeLayer {
             var delayTimer = delay
-            let delayTimerLabel = UILabel()
-            delayTimerLabel.frame = CGRect(x: loadingcircle.frame.origin.x + 30,
-                                           y: loadingcircle.frame.origin.y + 30,
-                                           width: loadingcircle.frame.width - 60,
-                                           height: loadingcircle.frame.height - 60)
+            let hideLock = UILabel()
+            hideLock.layer.backgroundColor = UIColor.white.cgColor
+            hideLock.frame = lockView.frame
+            self.addSubview(hideLock)
             
-            delayTimerLabel.layer.backgroundColor = UIColor.white.cgColor
+            let delayTimerLabel = UILabel()
+            delayTimerLabel.frame = CGRect(x: loadingcircle.frame.origin.x + 10,
+                                           y: loadingcircle.frame.origin.y + 10,
+                                           width: loadingcircle.frame.width - 20,
+                                           height: loadingcircle.frame.height - 20)
+            
+            delayTimerLabel.layer.backgroundColor = UIColor.clear.cgColor
             delayTimerLabel.textAlignment = .center
             delayTimerLabel.layer.cornerRadius = 10
-            let pointSize = delayTimerLabel.frame.height
-            if pointSize < 10 {
+            let pointSize = delayTimerLabel.frame.height - 20
+            if pointSize < 30 {
                 delayTimerLabel.attributedText = NSAttributedString.doorHugeTitle("\(Int(delayTimer))", colour: .doorBlue())
             } else {
                 delayTimerLabel.attributedText = NSAttributedString.doorGinormousTitle("\(Int(delayTimer))", colour: .doorBlue(), pointSize: pointSize)
             }
+            
             self.addSubview(delayTimerLabel)
             Timer.every(1.second) { (dtimer) in
                 print(.debug, object: delayTimer)
                 if delayTimer < 1 {
                     dtimer.invalidate()
                     delayTimerLabel.removeFromSuperview()
+                    hideLock.removeFromSuperview()
                 } else {
-                    if pointSize < 10 {
+                    if pointSize < 30 {
                         delayTimerLabel.attributedText = NSAttributedString.doorHugeTitle("\(Int(delayTimer))", colour: .doorBlue())
                     } else {
                         delayTimerLabel.attributedText = NSAttributedString.doorGinormousTitle("\(Int(delayTimer))", colour: .doorBlue(), pointSize: pointSize)
